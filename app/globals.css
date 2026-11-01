@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy-950: #070f20;
+  --color-navy-900: #0c1a33;
+  --color-navy-800: #12264a;
+  --color-navy-700: #1b3664;
+  --color-steel-50: #f4f6f9;
+  --color-steel-100: #e7ebf1;
+  --color-steel-400: #8a97ab;
+  --color-steel-600: #4c5a70;
+  --color-gold-300: #f0d48a;
+  --color-gold-400: #e2b956;
+  --color-gold-500: #c99a32;
+  --font-sans: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-navy-900);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(100deg, #f6e2a6 0%, #e2b956 45%, #b8862b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(7, 15, 32, 0.95) 0%, rgba(12, 26, 51, 0.82) 50%, rgba(12, 26, 51, 0.45) 100%);
+}
+
+[dir="rtl"] .hero-overlay {
+  background: linear-gradient(270deg, rgba(7, 15, 32, 0.95) 0%, rgba(12, 26, 51, 0.82) 50%, rgba(12, 26, 51, 0.45) 100%);
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(rgba(226, 185, 86, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(226, 185, 86, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+}

@@ -1,0 +1,736 @@
+export const locales = ["en", "ar"] as const;
+export type Locale = (typeof locales)[number];
+
+export const isLocale = (v: string): v is Locale =>
+  (locales as readonly string[]).includes(v);
+
+export const contact = {
+  phone: "+966 148184240",
+  phoneHref: "tel:+966148184240",
+  email: "zetrixfa@gmail.com",
+  website: "www.zetrix-sa.com",
+};
+
+const en = {
+  meta: {
+    title: "ZETRIX Metal Industries | From Metal, We Forge Trust",
+    description:
+      "ZETRIX Metal Industries manufactures heavy and light steel structures, cable trays, prefabricated systems and high-quality aluminum doors, windows and facades in Madinah, Saudi Arabia.",
+  },
+  nav: {
+    about: "About",
+    services: "Services",
+    process: "Process",
+    policies: "Policies",
+    projects: "Our Works",
+    contact: "Contact",
+    cta: "Request a Quote",
+    switchLang: "العربية",
+  },
+  hero: {
+    eyebrow: "ZETRIX Metal Industries",
+    title: "From Metal, We Forge Trust",
+    text: "Heavy and light steel structures, cable trays, prefabricated systems and precision aluminum works, manufactured under one roof in Madinah, Saudi Arabia.",
+    primary: "Explore Our Services",
+    secondary: "Contact Us",
+    tags: ["Steel Structures", "Aluminum Works", "Laser Cutting", "Galvanizing"],
+  },
+  about: {
+    eyebrow: "Who We Are",
+    title: "More than a manufacturer, a trusted industrial partner",
+    text: "ZETRIX Metal Industries is one of the leading factories in the manufacturing of heavy and light metal structures, as well as high-quality aluminum products including windows and doors. We combine accumulated technical expertise with the latest industrial technologies, from laser cutting systems to powder coating lines and precision aluminum forming, to deliver integrated metal solutions that meet our clients' expectations across various sectors. We place quality, precision and commitment at the heart of every project.",
+    vision: {
+      title: "Vision",
+      text: "To be the leading and most trusted name in metal structure manufacturing and aluminum products across the Kingdom, through technical leadership and sustained excellence.",
+    },
+    mission: {
+      title: "Mission",
+      text: "We are committed to delivering metal products that combine superior quality and engineering precision, through continuous investment in the latest technologies and the development of our human capabilities, while upholding the highest standards of safety and professionalism at every stage of production.",
+    },
+  },
+  values: {
+    eyebrow: "Core Values",
+    title: "What we stand on",
+    items: [
+      {
+        title: "Safety",
+        text: "The safety of our workers and of the final product comes first, through strict adherence to occupational safety standards on every production line, from heavy machinery to packaging and delivery.",
+      },
+      {
+        title: "Quality",
+        text: "The highest standards in material selection and at every stage of manufacturing, backed by modern equipment and rigorous inspection, so every product bearing the ZETRIX name reflects precision and durability.",
+      },
+      {
+        title: "Integrity",
+        text: "Relationships built on honesty and full transparency, in pricing, in adherence to agreed specifications and in meeting deadlines. Integrity is what earns our clients' repeated trust.",
+      },
+      {
+        title: "Commitment",
+        text: "We honor what we promise in agreed quality and delivery timelines, because commitment is the foundation of any successful, long-term industrial partnership.",
+      },
+      {
+        title: "Innovation",
+        text: "We keep pace with advances in the metal industry, from laser cutting to automated forming lines, and keep investing in our equipment to deliver more efficient and precise solutions.",
+      },
+    ],
+  },
+  why: {
+    eyebrow: "Why ZETRIX",
+    title: "Built for projects that cannot wait",
+    items: [
+      {
+        title: "Modern Equipment",
+        text: "The latest production lines and technologies in cutting, forming and coating ensure precision and competitive quality in every product.",
+      },
+      {
+        title: "Skilled Team",
+        text: "Our technical staff are trained to the highest standards, so every project is executed with precision and professionalism from start to finish.",
+      },
+      {
+        title: "On-Time Delivery",
+        text: "We adhere to agreed delivery schedules without delay, because we know your project timeline matters.",
+      },
+      {
+        title: "Trusted Group",
+        text: "Our clients trust us because we keep our promises, building long-term partnerships founded on quality and transparency.",
+      },
+    ],
+  },
+  services: {
+    eyebrow: "Products & Services",
+    title: "Integrated metal and aluminum solutions",
+    items: [
+      {
+        id: "steel",
+        title: "Steel Structures",
+        short: "Heavy and light structures combining load-bearing strength with engineering precision.",
+        text: "We design and manufacture the steel frames that form the backbone of industrial and construction projects, from factories and warehouses to bridges and commercial facilities. High-quality steel goes through precise measuring, cutting, welding and assembly, in compliance with internationally recognized load-bearing standards.",
+        image: "/images/steel-1.jpg",
+      },
+      {
+        id: "cable",
+        title: "Cable Trays",
+        short: "Reliable trays forming the base of safe electrical infrastructure.",
+        text: "Metal cable trays in various sizes and designs for electrical and communication systems in industrial, commercial and residential facilities. Made from rust-resistant materials with a protective coating for long-term performance, even in harsh environments.",
+        image: "/images/cable-1.jpg",
+      },
+      {
+        id: "prefab",
+        title: "Prefabricated Systems",
+        short: "Factory-built components that shorten on-site execution time.",
+        text: "Project components are manufactured entirely in our factory before transport to site, cutting execution time, reducing on-site errors and lowering labor costs, with consistent quality from a controlled environment. Ideal for warehouses and industrial complexes on tight schedules.",
+        image: "/images/prefab-1.jpg",
+      },
+      {
+        id: "galvanizing",
+        title: "Galvanizing & Coating",
+        short: "Protection from rust and weather for a longer lifespan.",
+        text: "Modern galvanizing coats the metal surface with zinc that keeps oxygen and moisture away from the base metal. Our powder coating lines add a durable finish that resists scratching and fading, in multiple colors to suit each project.",
+        image: "/images/galv-1.jpg",
+      },
+      {
+        id: "welding",
+        title: "Welding & Fabrication",
+        short: "Certified welders delivering strong, durable joints.",
+        text: "Certified technicians experienced in arc, argon and other welding techniques produce joints that withstand operational loads. Every weld goes through strict quality checks against engineering standards, from heavy structures to fine detail work.",
+        image: "/images/weld-1.jpg",
+      },
+      {
+        id: "cutting",
+        title: "Custom Cutting",
+        short: "High-precision fiber laser cutting to your drawings.",
+        text: "Fiber laser cutting systems shape steel and aluminum to the finest detail of the client's plans, handling complex shapes and tight dimensions while reducing material waste, for single projects or large-quantity production.",
+        image: "/images/laser-2.jpg",
+      },
+      {
+        id: "doors",
+        title: "Aluminum Doors & Windows",
+        short: "Durable, well-insulated designs with a modern look.",
+        text: "High-quality aluminum doors and windows with modern designs for any architectural style, multiple thermal and acoustic insulation options for better energy efficiency, and custom sizes from residential villas to commercial towers.",
+        image: "/images/alu-1.jpg",
+      },
+      {
+        id: "railings",
+        title: "Aluminum Windows & Railings",
+        short: "Structural safety balanced with modern aesthetics.",
+        text: "Window and railing work for balconies, staircases and outdoor spaces in residential and commercial projects, with open, closed and glass design options that meet client preferences and safety requirements.",
+        image: "/images/railing-1.jpg",
+      },
+      {
+        id: "custom-alu",
+        title: "Custom Aluminum Works",
+        short: "Curtain walls, partitions and tailored aluminum systems.",
+        text: "Solutions beyond standard products, including glass curtain walls, interior partitions and composite aluminum systems. Our team works directly with engineers and contractors to turn any architectural design into a precisely executed product.",
+        image: "/images/curtain-1.jpg",
+      },
+    ],
+  },
+  process: {
+    eyebrow: "Manufacturing Process",
+    title: "From drawing to erection",
+    steps: [
+      "Design & Engineering",
+      "Material Sourcing",
+      "Cutting & Fabrication",
+      "Welding & Assembly",
+      "Coating & QC",
+      "Delivery & Erection",
+    ],
+  },
+  capabilities: {
+    eyebrow: "Equipment & Capabilities",
+    title: "Fabrication, welding, galvanizing and assembly under one roof",
+    text: "Our factory is built to handle projects from single components to full structural packages.",
+    items: [
+      "Certified welding stations",
+      "CNC cutting & plasma machines",
+      "Heavy-duty overhead cranes",
+      "Precision measuring & QC tools",
+      "Hot-dip galvanizing line",
+      "In-house transport & logistics",
+    ],
+    materialsTitle: "Raw Materials & Sourcing",
+    materials: [
+      "Structural steel sections and plate from qualified mills",
+      "Premium aluminum profiles and integrated accessories for windows and doors",
+      "Processed, multi-layered glass: soundproof, thermally insulated and impact-resistant",
+      "Coating and galvanizing materials to specification",
+      "Material certificates verified before production",
+      "Reliable local and regional supply chain",
+    ],
+  },
+  policies: {
+    eyebrow: "Our Policies",
+    title: "Standards we hold ourselves to",
+    tabs: [
+      {
+        title: "Quality",
+        intro: "We deliver metal and aluminum products that meet the highest global quality standards, through:",
+        items: [
+          "Ensuring all products comply with the technical and engineering specifications agreed with clients",
+          "Strict quality checks at every stage, from raw material receipt to final delivery",
+          "Continuous investment in production lines and equipment for greater precision and consistency",
+          "Ongoing training of technical staff to raise efficiency and adherence to quality standards",
+          "Listening to client feedback and continuously improving our processes and products",
+          "Periodically reviewing the quality policy to keep pace with the industry and the market",
+        ],
+        closing: "Quality is not merely a standard we adhere to, but a core value that defines our reputation.",
+      },
+      {
+        title: "Safety",
+        intro: "The safety of our employees, visitors and clients is at the forefront of our priorities, through:",
+        items: [
+          "A safe working environment that complies with local and international occupational safety standards",
+          "Personal protective equipment for all employees and ensuring its correct use",
+          "Regular training on safety procedures and the safe handling of heavy machinery",
+          "Periodic inspections of equipment and production lines",
+          "Clear emergency plans and a workforce ready to respond",
+          "A culture of reporting hazards and addressing them immediately",
+        ],
+        closing: "Safety is a shared responsibility between management and every employee, working together for an accident-free workplace.",
+      },
+      {
+        title: "Environment",
+        intro: "We conduct our industrial activities in a responsible and environmentally friendly manner, through:",
+        items: [
+          "Complying with the environmental regulations applicable in the Kingdom",
+          "Minimizing raw material waste through precision cutting and manufacturing",
+          "Managing and disposing of industrial waste safely and responsibly",
+          "Optimizing energy and water consumption across operations",
+          "Using materials, coatings and galvanizing methods that minimize environmental impact",
+          "Raising employee awareness of environmentally responsible practices",
+        ],
+        closing: "Environmental responsibility is an integral part of our sustainable growth.",
+      },
+    ],
+  },
+  team: {
+    eyebrow: "Our Team",
+    title: "A multinational team across design, production and quality",
+    groups: [
+      {
+        title: "Design Engineers",
+        text: "Create engineering blueprints and 3D technical drawings, and study material properties to ensure durability and manufacturability.",
+      },
+      {
+        title: "Production Technicians",
+        text: "Operate production lines and machinery with high skill, performing precise forming, welding and fabrication.",
+      },
+      {
+        title: "QC & Safety Officers",
+        text: "Enforce strict quality control and occupational health and safety protocols for flawless products and a hazard-free workplace.",
+      },
+      {
+        title: "Logistics & Support",
+        text: "Manage the supply chain, warehousing and delivery coordination, with the administrative support that keeps work moving.",
+      },
+    ],
+    departmentsTitle: "Departments reporting to the General Manager",
+    departments: [
+      "Production",
+      "Quality & Safety",
+      "Engineering & Design",
+      "Procurement",
+      "Logistics",
+      "HR & Admin",
+      "Sales",
+    ],
+  },
+  projects: {
+    eyebrow: "Our Works",
+    title: "Where our steel stands",
+    items: [
+      {
+        title: "Industrial Structures",
+        text: "Structural steel frameworks for factories, warehouses and industrial facilities.",
+        image: "/images/steel-2.jpg",
+      },
+      {
+        title: "Cable Tray Systems",
+        text: "Cable tray and support systems for electrical and industrial installation projects.",
+        image: "/images/cable-2.jpg",
+      },
+      {
+        title: "Prefabricated Buildings",
+        text: "Architectural and prefabricated structures for fast-track construction programs.",
+        image: "/images/prefab-2.jpg",
+      },
+    ],
+  },
+  partnership: {
+    eyebrow: "Strategic Partnership",
+    title: "Part of Al-Safwa Alasryah's industrial integration",
+    text: "ZETRIX was established as part of Al-Safwa Alasryah's industrial integration strategy, manufacturing the steel structures, cable trays and prefabricated systems that support the group's construction projects.",
+    points: [
+      "Faster material supply for group construction projects",
+      "Tighter quality control across the supply chain",
+      "Reduced dependence on external metal-works vendors",
+    ],
+    clientsTitle: "Clients We Serve",
+    clients: [
+      "General Contractors",
+      "Electrical Contractors",
+      "Industrial Facilities",
+      "Real-Estate Developers",
+    ],
+  },
+  roadmap: {
+    eyebrow: "Roadmap",
+    title: "Our path forward",
+    steps: [
+      { title: "Establishment", text: "Factory setup and equipment commissioning" },
+      { title: "Production Start", text: "First product lines operational" },
+      { title: "Group Integration", text: "Supplying Al-Safwa Alasryah's projects" },
+      { title: "Market Expansion", text: "Serving clients beyond the group" },
+    ],
+  },
+  support: {
+    eyebrow: "Delivery & After-Sales",
+    title: "With you after the truck leaves",
+    items: [
+      { title: "Scheduled Delivery", text: "Coordinated delivery to project sites in line with construction schedules." },
+      { title: "Installation Support", text: "Technical guidance during on-site erection and assembly." },
+      { title: "Warranty Coverage", text: "Standing behind the quality of every product we manufacture." },
+      { title: "Responsive Support", text: "A direct line to our technical team for any post-delivery queries." },
+    ],
+  },
+  people: {
+    eyebrow: "People & Community",
+    title: "We build people before we build steel",
+    training: [
+      "Hands-on training for welders, fabricators and machine operators",
+      "Regular safety refreshers that keep every team member emergency-ready",
+      "Support in earning recognized trade and welding qualifications",
+      "Clear growth paths across production and engineering",
+    ],
+    sustainability: [
+      { title: "Responsible Recycling", text: "Nothing goes to waste. Every offcut finds its way back into the production cycle." },
+      { title: "Resource Efficiency", text: "Smart planning for every cut reduces waste and saves material and energy." },
+      { title: "Local Employment", text: "Skilled manufacturing jobs and training that build careers in our community." },
+      { title: "Community Support", text: "Helping the local industrial sector grow, because our success is our community's success." },
+    ],
+  },
+  closing: {
+    text: "At ZETRIX, steel never starts as cold metal. It starts as a spark of ambition. Between the glow of the weld and the precision of the measure, we forge structures that stand tall for generations.",
+    tagline: "Strength That Trust Is Built On",
+  },
+  contactSection: {
+    eyebrow: "Contact Us",
+    title: "Let's build your next project",
+    text: "Send us your drawings or requirements and our technical team will get back to you with a quote.",
+    phone: "Phone",
+    email: "Email",
+    website: "Website",
+    address: "Address",
+    addressValue: "Madinah, Saudi Arabia",
+    emailCta: "Email Us",
+    callCta: "Call Us",
+  },
+  footer: {
+    rights: "All rights reserved.",
+  },
+};
+
+export type Dictionary = typeof en;
+
+const ar: Dictionary = {
+  meta: {
+    title: "زيتريكس للصناعات المعدنية | من المعدن نصنع الثقة",
+    description:
+      "زيتريكس للصناعات المعدنية في المدينة المنورة: تصنيع الهياكل المعدنية الثقيلة والخفيفة ومجاري الكابلات وأنظمة التصنيع المسبق ومنتجات الألمنيوم عالية الجودة.",
+  },
+  nav: {
+    about: "من نحن",
+    services: "خدماتنا",
+    process: "مراحل التصنيع",
+    policies: "سياساتنا",
+    projects: "أعمالنا",
+    contact: "تواصل معنا",
+    cta: "اطلب عرض سعر",
+    switchLang: "English",
+  },
+  hero: {
+    eyebrow: "زيتريكس للصناعات المعدنية",
+    title: "من المعدن نصنع الثقة",
+    text: "هياكل معدنية ثقيلة وخفيفة، ومجاري كابلات، وأنظمة تصنيع مسبق، وأعمال ألمنيوم دقيقة، تُصنَّع تحت سقف واحد في المدينة المنورة.",
+    primary: "استعرض خدماتنا",
+    secondary: "تواصل معنا",
+    tags: ["الهياكل المعدنية", "أعمال الألمنيوم", "القص بالليزر", "الجلفنة"],
+  },
+  about: {
+    eyebrow: "من نحن",
+    title: "لسنا مجرد مصنع، بل شريك صناعي موثوق",
+    text: "تُعد زيتريكس للصناعات المعدنية إحدى المصانع الرائدة في مجال تصنيع الهياكل المعدنية الثقيلة والخفيفة، وتصنيع منتجات الألمنيوم عالية الجودة من نوافذ وأبواب. نجمع بين الخبرة الفنية المتراكمة وأحدث التقنيات الصناعية، من أنظمة القص بالليزر إلى خطوط الدهان بالبودرة وتشكيل الألمنيوم بدقة متناهية، لنقدّم حلولًا معدنية متكاملة تلبي تطلعات عملائنا في مختلف القطاعات، ونضع الجودة والدقة والالتزام في صميم كل مشروع.",
+    vision: {
+      title: "الرؤية",
+      text: "أن نكون العلامة الأولى والأكثر ثقة في صناعة الهياكل المعدنية ومنتجات الألمنيوم على مستوى المملكة، من خلال الريادة التقنية والتميز المستدام.",
+    },
+    mission: {
+      title: "الرسالة",
+      text: "نلتزم بتقديم منتجات معدنية تجمع بين الجودة الفائقة والدقة الهندسية، عبر استثمار مستمر في أحدث التقنيات وتطوير كفاءاتنا البشرية، وترسيخ أعلى معايير السلامة والاحترافية في كل مرحلة من مراحل الإنتاج.",
+    },
+  },
+  values: {
+    eyebrow: "القيم والمبادئ",
+    title: "ما نرتكز عليه",
+    items: [
+      {
+        title: "السلامة",
+        text: "نضع سلامة عمالنا وسلامة المنتج النهائي في مقدمة أولوياتنا، عبر الالتزام الصارم بمعايير السلامة المهنية في كل خط إنتاج، من تشغيل المعدات الثقيلة حتى التغليف والتسليم.",
+      },
+      {
+        title: "الجودة",
+        text: "نلتزم بأعلى معايير الجودة في اختيار المواد وفي كل مرحلة من مراحل التصنيع، مدعومين بأحدث المعدات وأنظمة فحص صارمة، ليعكس كل منتج يحمل اسم زيتريكس الدقة والمتانة.",
+      },
+      {
+        title: "النزاهة",
+        text: "نبني علاقاتنا مع العملاء والشركاء على الصدق والشفافية الكاملة، في عروض الأسعار والالتزام بالمواصفات المتفق عليها والوفاء بالمواعيد. النزاهة هي ما يكسبنا ثقة عملائنا المتجددة.",
+      },
+      {
+        title: "الالتزام",
+        text: "نفي بما نعد به عملاءنا من جودة ومواعيد تسليم متفق عليها، لإيماننا بأن الالتزام هو أساس أي شراكة صناعية ناجحة وطويلة الأمد.",
+      },
+      {
+        title: "الابتكار",
+        text: "نواكب التطورات التقنية المستمرة في صناعة المعادن، من أنظمة القص بالليزر إلى خطوط التشكيل الآلية، ونستثمر باستمرار في تحديث معداتنا لتقديم حلول أكثر كفاءة ودقة.",
+      },
+    ],
+  },
+  why: {
+    eyebrow: "لماذا زيتريكس",
+    title: "صُممنا لمشاريع لا تحتمل التأخير",
+    items: [
+      {
+        title: "معدات حديثة",
+        text: "نعتمد على أحدث خطوط الإنتاج والتقنيات في القص والتشكيل والطلاء لضمان الدقة والجودة التنافسية في كل منتج.",
+      },
+      {
+        title: "فريق ماهر",
+        text: "كوادرنا الفنية مدربة وفق أعلى المعايير، لضمان تنفيذ كل مشروع بدقة واحترافية من البداية حتى النهاية.",
+      },
+      {
+        title: "التسليم في الموعد",
+        text: "نلتزم بجداول التسليم المتفق عليها دون تأخير، لأننا ندرك أهمية الوقت في مشروعك.",
+      },
+      {
+        title: "مجموعة موثوقة",
+        text: "يثق بنا عملاؤنا لأننا نفي بوعودنا، ونبني شراكات طويلة الأمد قائمة على الجودة والشفافية.",
+      },
+    ],
+  },
+  services: {
+    eyebrow: "منتجاتنا وخدماتنا",
+    title: "حلول معدنية وألمنيوم متكاملة",
+    items: [
+      {
+        id: "steel",
+        title: "الهياكل المعدنية",
+        short: "هياكل ثقيلة وخفيفة تجمع بين قوة التحمل والدقة الهندسية.",
+        text: "نصمم ونصنّع الهياكل المعدنية التي تشكل العمود الفقري للمشاريع الصناعية والإنشائية، من هياكل المصانع والمستودعات إلى الجسور والمنشآت التجارية. يمر الحديد عالي الجودة بمراحل تصنيع دقيقة تشمل القياس والقص واللحام والتجميع، وفق معايير التحمل المعترف بها دوليًا.",
+        image: "/images/steel-1.jpg",
+      },
+      {
+        id: "cable",
+        title: "مجاري الكابلات",
+        short: "مجاري كابلات موثوقة تشكل أساس البنية الكهربائية الآمنة.",
+        text: "ننتج مجاري كابلات معدنية بمقاسات وتصاميم متنوعة تدعم أنظمة الكهرباء والاتصالات في المنشآت الصناعية والتجارية والسكنية، مصنوعة من مواد مقاومة للصدأ ومعالجة بطبقة حماية لضمان أداء طويل الأمد حتى في البيئات الصناعية القاسية.",
+        image: "/images/cable-1.jpg",
+      },
+      {
+        id: "prefab",
+        title: "أنظمة التصنيع المسبق",
+        short: "مكونات مصنّعة في المصنع تختصر وقت التنفيذ في الموقع.",
+        text: "نصنّع مكونات المشروع بالكامل داخل مصانعنا قبل نقلها إلى الموقع، مما يختصر وقت التنفيذ ويقلل الأخطاء وتكاليف العمالة، مع جودة ثابتة لكل قطعة بفضل التصنيع في بيئة محكومة. مثالي للمستودعات والمجمعات الصناعية ذات الجداول الزمنية الضيقة.",
+        image: "/images/prefab-1.jpg",
+      },
+      {
+        id: "galvanizing",
+        title: "الجلفنة والطلاء",
+        short: "حماية من الصدأ والعوامل الجوية لعمر افتراضي أطول.",
+        text: "نطبق تقنيات الجلفنة الحديثة بتغطية سطح المعدن بطبقة من الزنك تمنع وصول الأكسجين والرطوبة إليه، كما نوفر خطوط دهان بالبودرة تمنح المنتج تشطيبًا جماليًا متينًا مقاومًا للخدش والبهتان، بألوان متعددة تناسب كل مشروع.",
+        image: "/images/galv-1.jpg",
+      },
+      {
+        id: "welding",
+        title: "اللحام والتصنيع",
+        short: "لحامون معتمدون ينفذون وصلات قوية ومتينة.",
+        text: "يضم فريقنا فنيين ولحامين معتمدين ذوي خبرة واسعة في تقنيات اللحام المختلفة (اللحام الكهربائي، لحام الأرجون وغيرها)، لضمان وصلات قوية تتحمل الأحمال التشغيلية. نطبق فحوصات جودة صارمة على كل لحام للتأكد من مطابقته للمعايير الهندسية.",
+        image: "/images/weld-1.jpg",
+      },
+      {
+        id: "cutting",
+        title: "القص حسب الطلب",
+        short: "قص بالليزر عالي الدقة وفق مخططاتك.",
+        text: "نمتلك أنظمة قص بالليزر (Fiber Laser) عالية الدقة قادرة على تشكيل الحديد والألمنيوم بأدق التفاصيل الهندسية وفق مخططات العميل، مع تنفيذ الأشكال المعقدة والأبعاد الدقيقة وتقليل هدر المواد، لمشروع واحد أو للإنتاج بكميات كبيرة.",
+        image: "/images/laser-2.jpg",
+      },
+      {
+        id: "doors",
+        title: "أبواب ونوافذ الألمنيوم",
+        short: "تصاميم متينة عالية العزل بلمسة عصرية.",
+        text: "نصنّع أبواب ونوافذ ألمنيوم عالية الجودة بتصاميم عصرية تناسب مختلف الطرازات المعمارية، مع خيارات متعددة للعزل الحراري والصوتي لتحسين كفاءة الطاقة، وبمقاسات حسب الطلب من الفلل السكنية إلى الأبراج التجارية.",
+        image: "/images/alu-1.jpg",
+      },
+      {
+        id: "railings",
+        title: "شبابيك ودرابزين الألمنيوم",
+        short: "توازن بين الأمان الهيكلي واللمسة الجمالية العصرية.",
+        text: "ننفذ أعمال الشبابيك والدرابزين من الألمنيوم بدقة تصنيع عالية، مناسبة للشرفات والسلالم والمساحات الخارجية في المشاريع السكنية والتجارية، مع خيارات تصميم متنوعة (مفتوحة، مغلقة، زجاجية) تلبي رغبات العميل ومتطلبات السلامة.",
+        image: "/images/railing-1.jpg",
+      },
+      {
+        id: "custom-alu",
+        title: "أعمال الألمنيوم الخاصة",
+        short: "واجهات زجاجية وقواطع وأنظمة ألمنيوم مخصصة.",
+        text: "نقدم حلول ألمنيوم مخصصة تتجاوز المنتجات القياسية، تشمل الواجهات الزجاجية (Curtain Walls) والقواطع الداخلية وأنظمة الألمنيوم المركبة. يعمل فريقنا مباشرة مع المهندسين والمقاولين لتحويل أي تصميم معماري إلى منتج منفذ بدقة.",
+        image: "/images/curtain-1.jpg",
+      },
+    ],
+  },
+  process: {
+    eyebrow: "مراحل التصنيع",
+    title: "من المخطط إلى التركيب",
+    steps: [
+      "التصميم والهندسة",
+      "توريد المواد",
+      "القص والتصنيع",
+      "اللحام والتجميع",
+      "الطلاء وفحص الجودة",
+      "التسليم والتركيب",
+    ],
+  },
+  capabilities: {
+    eyebrow: "المعدات والقدرات",
+    title: "التصنيع واللحام والجلفنة والتجميع تحت سقف واحد",
+    text: "مصنعنا مجهز للتعامل مع المشاريع من المكونات الفردية إلى الباقات الإنشائية الكاملة.",
+    items: [
+      "محطات لحام معتمدة",
+      "ماكينات قص CNC وبلازما",
+      "رافعات علوية للأحمال الثقيلة",
+      "أدوات قياس وفحص جودة دقيقة",
+      "خط جلفنة بالغمس الساخن",
+      "نقل وخدمات لوجستية داخلية",
+    ],
+    materialsTitle: "المواد الخام والتوريد",
+    materials: [
+      "قطاعات وألواح حديد إنشائي من مصانع معتمدة",
+      "قطاعات ألمنيوم عالية الجودة وإكسسوارات متكاملة للأبواب والنوافذ",
+      "زجاج معالج متعدد الطبقات: عازل للصوت والحرارة ومقاوم للصدمات",
+      "مواد طلاء وجلفنة حسب المواصفات",
+      "التحقق من شهادات المواد قبل الإنتاج",
+      "سلسلة توريد محلية وإقليمية موثوقة",
+    ],
+  },
+  policies: {
+    eyebrow: "سياساتنا",
+    title: "معايير نلتزم بها",
+    tabs: [
+      {
+        title: "الجودة",
+        intro: "نلتزم بتقديم منتجات معدنية وألمنيوم تلبي أعلى معايير الجودة العالمية، من خلال:",
+        items: [
+          "ضمان مطابقة جميع المنتجات للمواصفات الفنية والهندسية المتفق عليها مع العملاء",
+          "فحوصات جودة صارمة في كل مرحلة، من استلام المواد الخام حتى التسليم النهائي",
+          "الاستثمار المستمر في تطوير خطوط الإنتاج والمعدات لدقة وثبات أعلى",
+          "التدريب المستمر للكوادر الفنية لرفع الكفاءة والالتزام بمعايير الجودة",
+          "الاستماع لملاحظات العملاء والتحسين المستمر لعملياتنا ومنتجاتنا",
+          "المراجعة الدورية لسياسة الجودة لمواكبة تطورات الصناعة ومتطلبات السوق",
+        ],
+        closing: "الجودة ليست مجرد معيار نلتزم به، بل قيمة جوهرية تحدد سمعتنا وعلاقتنا بعملائنا.",
+      },
+      {
+        title: "السلامة",
+        intro: "نضع سلامة موظفينا وزوارنا وعملائنا في مقدمة أولوياتنا، من خلال:",
+        items: [
+          "توفير بيئة عمل آمنة تتوافق مع معايير السلامة المهنية المحلية والدولية",
+          "تزويد جميع الموظفين بمعدات الحماية الشخصية وضمان استخدامها الصحيح",
+          "التدريب المنتظم على إجراءات السلامة والتعامل الآمن مع المعدات الثقيلة",
+          "الفحص الدوري للمعدات وخطوط الإنتاج",
+          "خطط طوارئ واضحة وجاهزية جميع الموظفين للاستجابة",
+          "تشجيع ثقافة الإبلاغ عن المخاطر ومعالجتها فورًا",
+        ],
+        closing: "السلامة مسؤولية مشتركة بين الإدارة وجميع الموظفين، نعمل معًا لبيئة عمل خالية من الحوادث.",
+      },
+      {
+        title: "البيئة",
+        intro: "نلتزم بممارسة أنشطتنا الصناعية بطريقة مسؤولة وصديقة للبيئة، من خلال:",
+        items: [
+          "الالتزام بالأنظمة والتشريعات البيئية المعمول بها في المملكة",
+          "تقليل هدر المواد الخام عبر تقنيات القص والتصنيع الدقيقة",
+          "إدارة النفايات الصناعية والتخلص منها بطريقة آمنة ومسؤولة",
+          "ترشيد استهلاك الطاقة والمياه في جميع العمليات",
+          "استخدام مواد وتقنيات طلاء وجلفنة تقلل الأثر البيئي",
+          "رفع وعي الموظفين بالممارسات البيئية المسؤولة",
+        ],
+        closing: "المسؤولية البيئية جزء لا يتجزأ من نمونا المستدام.",
+      },
+    ],
+  },
+  team: {
+    eyebrow: "فريقنا",
+    title: "فريق متعدد الجنسيات في التصميم والإنتاج والجودة",
+    groups: [
+      {
+        title: "مهندسو التصميم",
+        text: "يعدّون المخططات الهندسية والرسومات الفنية ثلاثية الأبعاد، ويدرسون خصائص المواد لضمان متانة المنتج وقابليته للتصنيع.",
+      },
+      {
+        title: "فنيو الإنتاج",
+        text: "يشغّلون خطوط الإنتاج والمعدات بمهارة عالية، وينفذون التشكيل واللحام والتصنيع بدقة.",
+      },
+      {
+        title: "مسؤولو الجودة والسلامة",
+        text: "يطبقون معايير صارمة لمراقبة الجودة وبروتوكولات الصحة والسلامة المهنية لمنتجات خالية من العيوب وبيئة عمل آمنة.",
+      },
+      {
+        title: "الخدمات اللوجستية والدعم",
+        text: "يديرون سلسلة التوريد والتخزين وتنسيق الشحن والتسليم، مع الدعم الإداري الذي يضمن استمرارية العمل.",
+      },
+    ],
+    departmentsTitle: "الإدارات التابعة للمدير العام",
+    departments: [
+      "الإنتاج",
+      "الجودة والسلامة",
+      "الهندسة والتصميم",
+      "المشتريات",
+      "الخدمات اللوجستية",
+      "الموارد البشرية والإدارة",
+      "المبيعات",
+    ],
+  },
+  projects: {
+    eyebrow: "أعمالنا",
+    title: "حيث يقف حديدنا",
+    items: [
+      {
+        title: "المنشآت الصناعية",
+        text: "هياكل حديدية إنشائية للمصانع والمستودعات والمنشآت الصناعية.",
+        image: "/images/steel-2.jpg",
+      },
+      {
+        title: "أنظمة مجاري الكابلات",
+        text: "مجاري كابلات وأنظمة تثبيت لمشاريع التمديدات الكهربائية والصناعية.",
+        image: "/images/cable-2.jpg",
+      },
+      {
+        title: "المباني مسبقة الصنع",
+        text: "منشآت معمارية ومسبقة الصنع لبرامج الإنشاء السريع.",
+        image: "/images/prefab-2.jpg",
+      },
+    ],
+  },
+  partnership: {
+    eyebrow: "شراكة استراتيجية",
+    title: "جزء من استراتيجية التكامل الصناعي لمجموعة الصفوة العصرية",
+    text: "تأسست زيتريكس ضمن استراتيجية التكامل الصناعي لمجموعة الصفوة العصرية، لتصنيع الهياكل المعدنية ومجاري الكابلات وأنظمة التصنيع المسبق التي تدعم مشاريع المجموعة الإنشائية.",
+    points: [
+      "توريد أسرع للمواد لمشاريع المجموعة الإنشائية",
+      "رقابة جودة أدق على سلسلة التوريد",
+      "تقليل الاعتماد على موردي الأعمال المعدنية الخارجيين",
+    ],
+    clientsTitle: "عملاؤنا",
+    clients: [
+      "المقاولون العامون",
+      "مقاولو الكهرباء",
+      "المنشآت الصناعية",
+      "المطورون العقاريون",
+    ],
+  },
+  roadmap: {
+    eyebrow: "خارطة الطريق",
+    title: "مسيرتنا نحو المستقبل",
+    steps: [
+      { title: "التأسيس", text: "تجهيز المصنع وتشغيل المعدات" },
+      { title: "بدء الإنتاج", text: "تشغيل خطوط الإنتاج الأولى" },
+      { title: "التكامل مع المجموعة", text: "توريد مشاريع الصفوة العصرية" },
+      { title: "التوسع في السوق", text: "خدمة العملاء خارج المجموعة" },
+    ],
+  },
+  support: {
+    eyebrow: "التسليم وخدمات ما بعد البيع",
+    title: "معك حتى بعد التسليم",
+    items: [
+      { title: "تسليم مجدول", text: "تسليم منسق لمواقع المشاريع وفق الجداول الإنشائية." },
+      { title: "دعم التركيب", text: "إرشاد فني أثناء التركيب والتجميع في الموقع." },
+      { title: "تغطية الضمان", text: "نقف خلف جودة كل منتج نصنّعه." },
+      { title: "دعم سريع الاستجابة", text: "خط مباشر مع فريقنا الفني لأي استفسارات بعد التسليم." },
+    ],
+  },
+  people: {
+    eyebrow: "الإنسان والمجتمع",
+    title: "نبني الإنسان قبل أن نبني الحديد",
+    training: [
+      "تدريب عملي للحامين والمصنّعين ومشغلي الماكينات",
+      "دورات سلامة منتظمة تبقي كل فرد جاهزًا للطوارئ",
+      "دعم الحصول على مؤهلات مهنية وشهادات لحام معترف بها",
+      "مسارات نمو واضحة في الإنتاج والهندسة",
+    ],
+    sustainability: [
+      { title: "إعادة تدوير مسؤولة", text: "لا شيء يُهدر، فكل قطعة متبقية تعود إلى دورة الإنتاج." },
+      { title: "كفاءة الموارد", text: "تخطيط ذكي لكل قصّة يقلل الهدر ويوفر المواد والطاقة." },
+      { title: "توظيف محلي", text: "وظائف صناعية ماهرة وتدريب يبني مسارات مهنية في مجتمعنا." },
+      { title: "دعم المجتمع", text: "نساهم في نمو القطاع الصناعي المحلي، فنجاحنا جزء من نجاح مجتمعنا." },
+    ],
+  },
+  closing: {
+    text: "في زيتريكس، لا يبدأ الحديد معدنًا باردًا، بل شرارة طموح. بين وهج اللحام ودقة القياس، نصنع هياكل تبقى شامخة لأجيال.",
+    tagline: "قوة تُبنى عليها الثقة",
+  },
+  contactSection: {
+    eyebrow: "تواصل معنا",
+    title: "لنبنِ مشروعك القادم معًا",
+    text: "أرسل لنا مخططاتك أو متطلباتك، وسيتواصل معك فريقنا الفني بعرض سعر.",
+    phone: "الهاتف",
+    email: "البريد الإلكتروني",
+    website: "الموقع الإلكتروني",
+    address: "العنوان",
+    addressValue: "المدينة المنورة، المملكة العربية السعودية",
+    emailCta: "راسلنا",
+    callCta: "اتصل بنا",
+  },
+  footer: {
+    rights: "جميع الحقوق محفوظة.",
+  },
+};
+
+export const dictionaries: Record<Locale, Dictionary> = { en, ar };
