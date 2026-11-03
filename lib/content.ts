@@ -19,6 +19,7 @@ const en = {
   },
   nav: {
     about: "About",
+    facility: "Our Facility",
     services: "Services",
     process: "Process",
     policies: "Policies",
@@ -50,6 +51,22 @@ const en = {
       title: "Mission",
       text: "We are committed to delivering metal products that combine superior quality and engineering precision, through continuous investment in the latest technologies and the development of our human capabilities, while upholding the highest standards of safety and professionalism at every stage of production.",
     },
+  },
+  facility: {
+    eyebrow: "Our Facility",
+    title: "A modern headquarters for metal industries",
+    text: "A look at the ZETRIX Metal Industries site in Madinah: the administration building, the production halls, and the loading and delivery areas.",
+    items: [
+      { src: "/images/facility-front.jpg", caption: "Main facade" },
+      { src: "/images/facility-entrance.jpg", caption: "Main entrance" },
+      { src: "/images/facility-office.jpg", caption: "Administration building" },
+      { src: "/images/facility-side.jpg", caption: "Visitor parking" },
+      { src: "/images/facility-roof.jpg", caption: "Rooftop solar panels" },
+      { src: "/images/facility-site.jpg", caption: "Production halls and loading area" },
+    ],
+    close: "Close",
+    prev: "Previous image",
+    next: "Next image",
   },
   gm: {
     eyebrow: "Message from the General Manager",
@@ -398,6 +415,7 @@ const ar: Dictionary = {
   },
   nav: {
     about: "من نحن",
+    facility: "مقرّنا",
     services: "خدماتنا",
     process: "مراحل التصنيع",
     policies: "سياساتنا",
@@ -429,6 +447,22 @@ const ar: Dictionary = {
       title: "الرسالة",
       text: "نلتزم بتقديم منتجات معدنية تجمع بين الجودة الفائقة والدقة الهندسية، عبر استثمار مستمر في أحدث التقنيات وتطوير كفاءاتنا البشرية، وترسيخ أعلى معايير السلامة والاحترافية في كل مرحلة من مراحل الإنتاج.",
     },
+  },
+  facility: {
+    eyebrow: "مقرّنا",
+    title: "مقرٌّ حديث للصناعات المعدنية",
+    text: "نظرة على موقع زيتركس للصناعات المعدنية في المدينة المنورة: مبنى الإدارة، وصالات الإنتاج، ومناطق التحميل والتسليم.",
+    items: [
+      { src: "/images/facility-front.jpg", caption: "الواجهة الرئيسية" },
+      { src: "/images/facility-entrance.jpg", caption: "المدخل الرئيسي" },
+      { src: "/images/facility-office.jpg", caption: "مبنى الإدارة" },
+      { src: "/images/facility-side.jpg", caption: "مواقف الزوار" },
+      { src: "/images/facility-roof.jpg", caption: "ألواح الطاقة الشمسية على السطح" },
+      { src: "/images/facility-site.jpg", caption: "صالات الإنتاج ومنطقة التحميل" },
+    ],
+    close: "إغلاق",
+    prev: "الصورة السابقة",
+    next: "الصورة التالية",
   },
   gm: {
     eyebrow: "كلمة المدير العام",

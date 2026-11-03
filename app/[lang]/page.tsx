@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import PolicyTabs from "@/components/PolicyTabs";
 import SoundFX from "@/components/SoundFX";
 import ScrollTop from "@/components/ScrollTop";
+import FacilityGallery from "@/components/FacilityGallery";
 import {
   ArrowIcon,
   BadgeIcon,
@@ -193,6 +194,22 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
                 <Image src="/images/alu-2.jpg" alt="" fill sizes="(min-width:1024px) 20vw, 50vw" className="object-cover" />
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Facility gallery */}
+        <section id="facility" className="bg-steel-50 py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <Heading eyebrow={t.facility.eyebrow} title={t.facility.title} />
+              <p className="max-w-xl text-lg leading-relaxed text-steel-600">{t.facility.text}</p>
+            </div>
+            <div className="mt-12">
+              <FacilityGallery
+                items={t.facility.items}
+                labels={{ close: t.facility.close, prev: t.facility.prev, next: t.facility.next }}
+              />
             </div>
           </div>
         </section>
