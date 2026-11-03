@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import PolicyTabs from "@/components/PolicyTabs";
 import SoundFX from "@/components/SoundFX";
+import ScrollTop from "@/components/ScrollTop";
 import {
   ArrowIcon,
   BadgeIcon,
@@ -33,6 +34,14 @@ import { contact, dictionaries, isLocale } from "@/lib/content";
 const valueIcons = [ShieldIcon, StarIcon, HandshakeIcon, TargetIcon, SparkIcon];
 const whyIcons = [GearIcon, UsersIcon, ClockIcon, BadgeIcon];
 const supportIcons = [TruckIcon, WrenchIcon, ShieldIcon, HeadsetIcon];
+const heroSlides = ["/images/weld-2.jpg", "/images/laser-2.jpg", "/images/steel-1.jpg"];
+// fixed values (not random) so server and browser render the same markup
+const sparks = Array.from({ length: 26 }, (_, i) => ({
+  left: (i * 37 + 11) % 100,
+  size: 2 + (i % 3),
+  dur: 7 + ((i * 7) % 9),
+  delay: -((i * 1.7) % 14),
+}));
 const promiseIcons = [CheckIcon, ClockIcon, HandshakeIcon];
 const sustainIcons = [RecycleIcon, LeafIcon, HomeIcon, HeartIcon];
 
@@ -71,20 +80,38 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
     <>
       <Header t={t.nav} lang={lang} />
       <SoundFX labels={{ soundOn: t.nav.soundOn, soundOff: t.nav.soundOff }} />
+      <ScrollTop label={t.nav.toTop} />
 
       <main id="top">
         {/* Hero */}
         <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-navy-950">
-          <Image
-            src="/images/weld-2.jpg"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="-z-20 object-cover"
-          />
+          {/* Animated background: slow cross-fading slideshow with a gentle zoom */}
+          <div className="absolute inset-0 -z-20 overflow-hidden">
+            {heroSlides.map((src, i) => (
+              <div key={src} className="hero-slide absolute inset-0" style={{ animationDelay: `${i * 6 - 1.1}s` }}>
+                <Image src={src} alt="" fill priority={i === 0} sizes="100vw" className="object-cover" />
+              </div>
+            ))}
+          </div>
           <div className="hero-overlay absolute inset-0 -z-10" />
-          <div className="grid-lines absolute inset-0 -z-10" />
+          <div className="grid-lines grid-drift absolute inset-0 -z-10" />
+          <div className="hero-glow absolute -z-10" />
+          {/* Rising welding sparks */}
+          <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden>
+            {sparks.map((sp, i) => (
+              <span
+                key={i}
+                className="spark"
+                style={{
+                  left: `${sp.left}%`,
+                  width: sp.size,
+                  height: sp.size,
+                  animationDuration: `${sp.dur}s`,
+                  animationDelay: `${sp.delay}s`,
+                }}
+              />
+            ))}
+          </div>
 
           <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-4 pb-20 pt-32 sm:px-6 lg:grid-cols-[1.3fr_1fr] lg:px-8">
             <div>

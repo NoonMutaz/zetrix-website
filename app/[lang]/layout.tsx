@@ -21,7 +21,7 @@ export async function generateMetadata({
   if (!isLocale(lang)) return {};
   const t = dictionaries[lang];
   return {
-    metadataBase: new URL("https://www.zetrix-sa.com"),
+    metadataBase: new URL("https://zetrix-website.vercel.app"),
     title: t.meta.title,
     description: t.meta.description,
     alternates: { languages: { en: "/en", ar: "/ar" } },

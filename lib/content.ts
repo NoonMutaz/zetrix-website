@@ -8,7 +8,7 @@ export const contact = {
   phone: "+966 148184240",
   phoneHref: "tel:+966148184240",
   email: "zetrixfa@gmail.com",
-  website: "www.zetrix-sa.com",
+  website: "zetrix-website.vercel.app/ar",
 };
 
 const en = {
@@ -26,8 +26,9 @@ const en = {
     contact: "Contact",
     cta: "Request a Quote",
     switchLang: "العربية",
-    soundOn: "Turn sound effects on",
-    soundOff: "Turn sound effects off",
+    soundOn: "Play background music",
+    soundOff: "Mute music and sounds",
+    toTop: "Back to top",
   },
   hero: {
     eyebrow: "ZETRIX Metal Industries",
@@ -404,8 +405,9 @@ const ar: Dictionary = {
     contact: "تواصل معنا",
     cta: "اطلب عرض سعر",
     switchLang: "English",
-    soundOn: "تشغيل المؤثرات الصوتية",
-    soundOff: "إيقاف المؤثرات الصوتية",
+    soundOn: "تشغيل الموسيقى",
+    soundOff: "إيقاف الموسيقى والأصوات",
+    toTop: "العودة إلى الأعلى",
   },
   hero: {
     eyebrow: "زيتريكس للصناعات المعدنية",

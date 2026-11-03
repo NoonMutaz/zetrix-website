@@ -46,3 +46,104 @@ body {
     linear-gradient(90deg, rgba(226, 185, 86, 0.07) 1px, transparent 1px);
   background-size: 48px 48px;
 }
+
+/* ---------- Hero animated background ---------- */
+.hero-slide {
+  opacity: 0;
+  animation: hero-fade 18s infinite;
+}
+.hero-slide:first-child {
+  opacity: 1;
+}
+.hero-slide img {
+  animation: ken-burns 18s ease-in-out infinite alternate;
+}
+@keyframes hero-fade {
+  0% { opacity: 0; }
+  6% { opacity: 1; }
+  33% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes ken-burns {
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to { transform: scale(1.14) translate3d(-2%, -1.5%, 0); }
+}
+
+.grid-drift {
+  animation: grid-drift 30s linear infinite;
+}
+@keyframes grid-drift {
+  to { background-position: 48px 48px, 48px 48px; }
+}
+
+.hero-glow {
+  width: 46rem;
+  height: 46rem;
+  inset-inline-end: -12rem;
+  bottom: -18rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(226, 185, 86, 0.28), transparent 65%);
+  filter: blur(20px);
+  animation: glow-pulse 7s ease-in-out infinite;
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+
+.spark {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 9999px;
+  background: #f6d47a;
+  box-shadow: 0 0 6px 2px rgba(246, 180, 60, 0.75);
+  animation-name: spark-rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes spark-rise {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  10% { opacity: 1; }
+  80% { opacity: 0.8; }
+  100% { transform: translate3d(40px, -105vh, 0); opacity: 0; }
+}
+
+/* ---------- Floating buttons ---------- */
+.arrow-bob {
+  animation: arrow-bob 1.6s ease-in-out infinite;
+}
+@keyframes arrow-bob {
+  0%, 100% { transform: translateY(1px); }
+  50% { transform: translateY(-3px); }
+}
+.sound-ring {
+  animation: sound-ring 2.4s ease-out infinite;
+}
+@keyframes sound-ring {
+  from { transform: scale(1); opacity: 0.8; }
+  to { transform: scale(1.6); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide, .hero-slide img, .grid-drift, .hero-glow, .spark, .arrow-bob, .sound-ring {
+    animation: none !important;
+  }
+  .spark { display: none; }
+}
+
+/* ---------- Justified text ---------- */
+main p,
+main li > span:last-child,
+main li.flex {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+/* keep centered blocks centered */
+main .text-center p,
+main p.text-center,
+main .text-center li,
+main li.text-center {
+  text-align: center;
+}

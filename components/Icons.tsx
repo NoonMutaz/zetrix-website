@@ -189,3 +189,9 @@ export const QuoteIcon = ({ className }: IconProps) => (
     <path d="M9.6 5C6 6.6 4 9.4 4 13.2V19h6v-6H7c0-2.6 1.3-4.4 3.6-5.6L9.6 5zm10 0C16 6.6 14 9.4 14 13.2V19h6v-6h-3c0-2.6 1.3-4.4 3.6-5.6L19.6 5z" />
   </svg>
 );
+
+export const ArrowUpIcon = ({ className }: IconProps) => (
+  <svg {...base} className={className}>
+    <path d="M12 19V5M6 11l6-6 6 6" />
+  </svg>
+);
