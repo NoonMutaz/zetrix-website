@@ -169,3 +169,23 @@ export const ArrowIcon = ({ className }: IconProps) => (
     <path d="M5 12h14M13 6l6 6-6 6" />
   </svg>
 );
+
+export const SoundOnIcon = ({ className }: IconProps) => (
+  <svg {...base} className={className}>
+    <path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" />
+    <path d="M15.5 9a4 4 0 010 6M18 6.5a7.5 7.5 0 010 11" />
+  </svg>
+);
+
+export const SoundOffIcon = ({ className }: IconProps) => (
+  <svg {...base} className={className}>
+    <path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" />
+    <path d="M16 9.5l5 5M21 9.5l-5 5" />
+  </svg>
+);
+
+export const QuoteIcon = ({ className }: IconProps) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={className}>
+    <path d="M9.6 5C6 6.6 4 9.4 4 13.2V19h6v-6H7c0-2.6 1.3-4.4 3.6-5.6L9.6 5zm10 0C16 6.6 14 9.4 14 13.2V19h6v-6h-3c0-2.6 1.3-4.4 3.6-5.6L19.6 5z" />
+  </svg>
+);

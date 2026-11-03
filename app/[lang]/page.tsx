@@ -2,6 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import PolicyTabs from "@/components/PolicyTabs";
+import SoundFX from "@/components/SoundFX";
 import {
   ArrowIcon,
   BadgeIcon,
@@ -17,6 +18,7 @@ import {
   MailIcon,
   PhoneIcon,
   PinIcon,
+  QuoteIcon,
   RecycleIcon,
   ShieldIcon,
   SparkIcon,
@@ -31,6 +33,7 @@ import { contact, dictionaries, isLocale } from "@/lib/content";
 const valueIcons = [ShieldIcon, StarIcon, HandshakeIcon, TargetIcon, SparkIcon];
 const whyIcons = [GearIcon, UsersIcon, ClockIcon, BadgeIcon];
 const supportIcons = [TruckIcon, WrenchIcon, ShieldIcon, HeadsetIcon];
+const promiseIcons = [CheckIcon, ClockIcon, HandshakeIcon];
 const sustainIcons = [RecycleIcon, LeafIcon, HomeIcon, HeartIcon];
 
 function Heading({
@@ -67,6 +70,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   return (
     <>
       <Header t={t.nav} lang={lang} />
+      <SoundFX labels={{ soundOn: t.nav.soundOn, soundOff: t.nav.soundOff }} />
 
       <main id="top">
         {/* Hero */}
@@ -162,6 +166,58 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
                 <Image src="/images/alu-2.jpg" alt="" fill sizes="(min-width:1024px) 20vw, 50vw" className="object-cover" />
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* General Manager's message */}
+        <section id="gm-message" className="relative overflow-hidden bg-navy-950 py-24">
+          <div className="grid-lines absolute inset-0" />
+          <div className="absolute -top-32 end-0 h-96 w-96 rounded-full bg-gold-400/10 blur-3xl" />
+          <div className="relative mx-auto grid max-w-7xl items-start gap-14 px-4 sm:px-6 lg:grid-cols-[320px_1fr] lg:px-8">
+            <div className="flex flex-col items-center text-center lg:sticky lg:top-28">
+              <div className="relative">
+                <div className="absolute -inset-3 rounded-full bg-gold-400/25 blur-2xl" />
+                <div className="relative h-56 w-56 overflow-hidden rounded-full bg-white ring-4 ring-gold-400 ring-offset-4 ring-offset-navy-950 sm:h-64 sm:w-64">
+                  <Image
+                    src="/images/gm-ahmed-alghamdi.png"
+                    alt={t.gm.name}
+                    fill
+                    sizes="256px"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              <p className="text-gold-gradient mt-8 text-2xl font-extrabold">{t.gm.name}</p>
+              <p className="mt-1 text-sm font-semibold uppercase tracking-[0.15em] text-white/60">{t.gm.role}</p>
+            </div>
+
+            <div>
+              <Heading eyebrow={t.gm.eyebrow} title={t.gm.title} dark />
+              <div className="relative mt-10 rounded-2xl border border-gold-400/25 bg-white/[0.04] p-7 sm:p-10">
+                <QuoteIcon className="absolute -top-5 start-7 h-10 w-10 text-gold-400 rtl:-scale-x-100" />
+                <div className="space-y-5 text-base leading-loose text-white/80 sm:text-lg">
+                  {t.gm.paragraphs.map((para) => (
+                    <p key={para.slice(0, 24)}>{para}</p>
+                  ))}
+                </div>
+              </div>
+              <ul className="mt-8 grid gap-4 sm:grid-cols-3">
+                {t.gm.promises.map((item, i) => {
+                  const Icon = promiseIcons[i];
+                  return (
+                    <li
+                      key={item}
+                      className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-4 font-semibold text-white"
+                    >
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gold-400 text-navy-950">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      {item}
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </div>
         </section>

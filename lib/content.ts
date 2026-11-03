@@ -26,6 +26,8 @@ const en = {
     contact: "Contact",
     cta: "Request a Quote",
     switchLang: "العربية",
+    soundOn: "Turn sound effects on",
+    soundOff: "Turn sound effects off",
   },
   hero: {
     eyebrow: "ZETRIX Metal Industries",
@@ -47,6 +49,20 @@ const en = {
       title: "Mission",
       text: "We are committed to delivering metal products that combine superior quality and engineering precision, through continuous investment in the latest technologies and the development of our human capabilities, while upholding the highest standards of safety and professionalism at every stage of production.",
     },
+  },
+  gm: {
+    eyebrow: "Message from the General Manager",
+    title: "Our Promise",
+    paragraphs: [
+      "At ZETRIX, we believe steel never starts as cold metal; it starts as ambition taking shape. From that belief, Zetrix Metal Industries was built: a factory that puts precision and commitment into every structure we fabricate, every aluminum window we form, and every cable tray we deliver.",
+      "Industry is not only machines and production lines; it is people who master their craft, and a way of working that accepts no shortcuts. That is why we invest in the latest technologies and, just as importantly, in our team, because steel is shaped by trained hands before it is shaped by machines.",
+      "Safety is a daily culture for us, not an add-on procedure. Quality is a commitment at every stage, from material selection to final delivery. Our promise to clients and partners is simple: agreed specifications, deadlines that are respected, and full transparency in every dealing.",
+      "We move forward with determination to become the name that projects across the Kingdom trust, contributing to the national industrial development journey and to building national talent that shapes the future.",
+      "I thank everyone who helped build this foundation, and I invite you to get to know Zetrix closely, so that together we can build projects that last.",
+    ],
+    name: "Ahmed Al-Ghamdi",
+    role: "General Manager",
+    promises: ["Agreed Specifications", "Deadlines Kept", "Full Transparency"],
   },
   values: {
     eyebrow: "Core Values",
@@ -388,6 +404,8 @@ const ar: Dictionary = {
     contact: "تواصل معنا",
     cta: "اطلب عرض سعر",
     switchLang: "English",
+    soundOn: "تشغيل المؤثرات الصوتية",
+    soundOff: "إيقاف المؤثرات الصوتية",
   },
   hero: {
     eyebrow: "زيتريكس للصناعات المعدنية",
@@ -409,6 +427,20 @@ const ar: Dictionary = {
       title: "الرسالة",
       text: "نلتزم بتقديم منتجات معدنية تجمع بين الجودة الفائقة والدقة الهندسية، عبر استثمار مستمر في أحدث التقنيات وتطوير كفاءاتنا البشرية، وترسيخ أعلى معايير السلامة والاحترافية في كل مرحلة من مراحل الإنتاج.",
     },
+  },
+  gm: {
+    eyebrow: "كلمة المدير العام",
+    title: "عهدنا",
+    paragraphs: [
+      "الحديد في نظرنا لا يبدأ قطعةً باردة، بل يبدأ طموحاً يتشكّل. ومن هذا الإيمان انطلقت زيتركس للصناعات المعدنية: مصنع نضع في كل هيكل نصنعه، وكل نافذة ألمنيوم نشكّلها، وكل مجرى كابلات نسلّمه، معنى الدقة والالتزام.",
+      "نؤمن أن الصناعة ليست ماكينات وخطوط إنتاج فقط، بل هي إنسان يتقن عمله، وأسلوب عمل لا يقبل أنصاف الحلول. لذلك نستثمر في أحدث التقنيات، وفي الوقت نفسه في فريقنا، لأن الفولاذ يتشكل بأيدٍ مدرّبة قبل أن يتشكل بالآلات.",
+      "السلامة عندنا ثقافة يومية وليست إجراءً إضافياً، والجودة التزام في كل مرحلة، من اختيار الخامة حتى التسليم. وعهدنا لعملائنا وشركائنا أن نفي بما نعد به: مواصفات متفق عليها، ومواعيد تُحترم، وشفافية كاملة في التعامل.",
+      "نمضي في رحلتنا بإصرار على أن نكون الاسم الذي تثق به المشاريع في مختلف قطاعات المملكة، ونعمل ضمن مسيرة التنمية الصناعية الوطنية، وفي بناء كفاءات وطنية تصنع المستقبل.",
+      "أشكر كل من ساهم في تأسيس هذا الصرح، وأدعوكم للتعرف على زيتركس عن قرب، وأن نبني معاً مشاريع تدوم.",
+    ],
+    name: "أحمد الغامدي",
+    role: "المدير العام",
+    promises: ["مواصفات متفق عليها", "مواعيد تُحترم", "شفافية كاملة"],
   },
   values: {
     eyebrow: "القيم والمبادئ",
