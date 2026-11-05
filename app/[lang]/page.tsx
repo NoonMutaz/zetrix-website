@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import PolicyTabs from "@/components/PolicyTabs";
 import SoundFX from "@/components/SoundFX";
 import ScrollTop from "@/components/ScrollTop";
+import Reveal from "@/components/Reveal";
 import FacilityGallery from "@/components/FacilityGallery";
 import {
   ArrowIcon,
@@ -59,15 +60,23 @@ function Heading({
 }) {
   return (
     <div className={center ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
-      <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold-500">{eyebrow}</p>
+      <p
+        className={`inline-flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-gold-500 ${
+          center ? "justify-center" : ""
+        }`}
+      >
+        <span className="h-px w-8 bg-gradient-to-r from-transparent to-gold-400 rtl:bg-gradient-to-l" />
+        {eyebrow}
+        {center && <span className="h-px w-8 bg-gradient-to-l from-transparent to-gold-400 rtl:bg-gradient-to-r" />}
+      </p>
       <h2
-        className={`mt-3 text-3xl font-extrabold leading-tight sm:text-4xl ${
+        className={`mt-4 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-[2.75rem] ${
           dark ? "text-white" : "text-navy-900"
         }`}
       >
         {title}
       </h2>
-      <span className={`mt-5 block h-1 w-16 rounded bg-gold-400 ${center ? "mx-auto" : ""}`} />
+      <span className={`mt-6 block h-1 w-20 rounded-full bg-gradient-to-r from-gold-500 via-gold-300 to-gold-500 ${center ? "mx-auto" : ""}`} />
     </div>
   );
 }
@@ -82,6 +91,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       <Header t={t.nav} lang={lang} />
       <SoundFX labels={{ soundOn: t.nav.soundOn, soundOff: t.nav.soundOff }} />
       <ScrollTop label={t.nav.toTop} />
+      <Reveal />
 
       <main id="top">
         {/* Hero */}
@@ -95,7 +105,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             ))}
           </div>
           <div className="hero-overlay absolute inset-0 -z-10" />
-          <div className="grid-lines grid-drift absolute inset-0 -z-10" />
+          <div className="grid-lines absolute inset-0 -z-10" />
           <div className="hero-glow absolute -z-10" />
           {/* Rising welding sparks */}
           <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden>
@@ -120,14 +130,14 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 <span className="h-2 w-2 rounded-full bg-gold-400" />
                 {t.hero.eyebrow}
               </p>
-              <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
+              <h1 className="mt-6 text-4xl font-extrabold leading-[1.15] text-white sm:text-6xl lg:text-7xl">
                 <span className="text-gold-gradient">{t.hero.title}</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">{t.hero.text}</p>
               <div className="mt-9 flex flex-wrap gap-4">
                 <a
                   href="#services"
-                  className="inline-flex items-center gap-2 rounded-full bg-gold-400 px-7 py-3.5 font-semibold text-navy-950 transition-colors hover:bg-gold-300"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-300 to-gold-500 px-7 py-3.5 font-semibold text-navy-950 shadow-[0_10px_30px_-8px_rgba(226,185,86,0.7)] transition-transform hover:-translate-y-0.5"
                 >
                   {t.hero.primary}
                   <ArrowIcon className="h-5 w-5 rtl:rotate-180" />
@@ -172,7 +182,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               <p className="mt-8 text-lg leading-relaxed text-steel-600">{t.about.text}</p>
               <div className="mt-10 grid gap-5 sm:grid-cols-2">
                 {[t.about.vision, t.about.mission].map((b, i) => (
-                  <div key={b.title} className="rounded-2xl border border-steel-100 bg-steel-50 p-6">
+                  <div key={b.title} className="rounded-2xl border border-steel-100 bg-white p-6 shadow-sm card-lift">
                     <div className="flex items-center gap-3">
                       <span className="grid h-10 w-10 place-items-center rounded-xl bg-navy-900 text-gold-400">
                         {i === 0 ? <TargetIcon className="h-5 w-5" /> : <SparkIcon className="h-5 w-5" />}
@@ -199,7 +209,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </section>
 
         {/* Facility gallery */}
-        <section id="facility" className="bg-steel-50 py-24">
+        <section id="facility" className="dot-bg py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <Heading eyebrow={t.facility.eyebrow} title={t.facility.title} />
@@ -215,7 +225,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </section>
 
         {/* General Manager's message */}
-        <section id="gm-message" className="relative overflow-hidden bg-navy-950 py-24">
+        <section id="gm-message" className="relative overflow-hidden navy-bg py-24">
           <div className="grid-lines absolute inset-0" />
           <div className="absolute -top-32 end-0 h-96 w-96 rounded-full bg-gold-400/10 blur-3xl" />
           <div className="relative mx-auto grid max-w-7xl items-start gap-14 px-4 sm:px-6 lg:grid-cols-[320px_1fr] lg:px-8">
@@ -238,7 +248,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
             <div>
               <Heading eyebrow={t.gm.eyebrow} title={t.gm.title} dark />
-              <div className="relative mt-10 rounded-2xl border border-gold-400/25 bg-white/[0.04] p-7 sm:p-10">
+              <div className="relative mt-10 rounded-3xl border border-gold-400/30 glass-card p-7 sm:p-10">
                 <QuoteIcon className="absolute -top-5 start-7 h-10 w-10 text-gold-400 rtl:-scale-x-100" />
                 <div className="space-y-5 text-base leading-loose text-white/80 sm:text-lg">
                   {t.gm.paragraphs.map((para) => (
@@ -252,7 +262,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                   return (
                     <li
                       key={item}
-                      className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-4 font-semibold text-white"
+                      className="flex items-center gap-3 rounded-xl glass-card card-lift px-4 py-4 font-semibold text-white"
                     >
                       <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gold-400 text-navy-950">
                         <Icon className="h-5 w-5" />
@@ -267,7 +277,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </section>
 
         {/* Values */}
-        <section className="bg-steel-50 py-24">
+        <section className="dot-bg py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <Heading eyebrow={t.values.eyebrow} title={t.values.title} center />
             <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
@@ -276,7 +286,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 return (
                   <div
                     key={v.title}
-                    className="group rounded-2xl border border-steel-100 bg-white p-6 transition-shadow hover:shadow-xl"
+                    className="group rounded-2xl border border-steel-100 bg-white p-6 shadow-sm card-lift"
                   >
                     <span className="grid h-12 w-12 place-items-center rounded-xl bg-navy-900 text-gold-400 transition-colors group-hover:bg-gold-400 group-hover:text-navy-950">
                       <Icon className="h-6 w-6" />
@@ -291,7 +301,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </section>
 
         {/* Why */}
-        <section className="relative overflow-hidden bg-navy-900 py-24">
+        <section className="relative overflow-hidden navy-bg py-24">
           <div className="grid-lines absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <Heading eyebrow={t.why.eyebrow} title={t.why.title} dark />
@@ -299,7 +309,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               {t.why.items.map((w, i) => {
                 const Icon = whyIcons[i];
                 return (
-                  <div key={w.title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-7">
+                  <div key={w.title} className="rounded-2xl glass-card card-lift p-7">
                     <div className="flex items-center justify-between">
                       <Icon className="h-9 w-9 text-gold-400" />
                       <span className="text-4xl font-extrabold text-white/10">0{i + 1}</span>
@@ -322,7 +332,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 <article
                   key={s.id}
                   id={s.id}
-                  className="group flex flex-col overflow-hidden rounded-2xl border border-steel-100 bg-white shadow-sm transition-shadow hover:shadow-xl"
+                  className="group flex flex-col overflow-hidden rounded-2xl border border-steel-100 bg-white shadow-sm card-lift"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
@@ -346,7 +356,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </section>
 
         {/* Process */}
-        <section id="process" className="bg-steel-50 py-24">
+        <section id="process" className="dot-bg py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <Heading eyebrow={t.process.eyebrow} title={t.process.title} center />
             <ol className="relative mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-6 lg:gap-4">
@@ -396,7 +406,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </section>
 
         {/* Policies */}
-        <section id="policies" className="relative overflow-hidden bg-navy-950 py-24">
+        <section id="policies" className="relative overflow-hidden navy-bg py-24">
           <div className="grid-lines absolute inset-0" />
           <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <Heading eyebrow={t.policies.eyebrow} title={t.policies.title} dark />
@@ -412,7 +422,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             <Heading eyebrow={t.team.eyebrow} title={t.team.title} />
             <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {t.team.groups.map((g) => (
-                <div key={g.title} className="rounded-2xl border-t-4 border-gold-400 bg-steel-50 p-6">
+                <div key={g.title} className="rounded-2xl border border-steel-100 border-t-4 border-t-gold-400 bg-white p-6 shadow-sm card-lift">
                   <UsersIcon className="h-8 w-8 text-navy-700" />
                   <h3 className="mt-4 text-lg font-bold">{g.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-steel-600">{g.text}</p>
@@ -435,7 +445,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </section>
 
         {/* Projects */}
-        <section id="projects" className="bg-steel-50 py-24">
+        <section id="projects" className="dot-bg py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <Heading eyebrow={t.projects.eyebrow} title={t.projects.title} />
             <div className="mt-14 grid gap-7 md:grid-cols-3">
@@ -488,12 +498,12 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </section>
 
         {/* Roadmap */}
-        <section className="bg-steel-50 py-24">
+        <section className="dot-bg py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <Heading eyebrow={t.roadmap.eyebrow} title={t.roadmap.title} center />
             <ol className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {t.roadmap.steps.map((s, i) => (
-                <li key={s.title} className="relative rounded-2xl bg-white p-7 shadow-sm">
+                <li key={s.title} className="relative overflow-hidden rounded-2xl border border-steel-100 bg-white p-7 shadow-sm card-lift">
                   <span className="text-sm font-bold text-gold-500">0{i + 1}</span>
                   <h3 className="mt-2 text-xl font-bold">{s.title}</h3>
                   <p className="mt-2 text-sm text-steel-600">{s.text}</p>
@@ -528,7 +538,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </section>
 
         {/* People & community */}
-        <section className="relative overflow-hidden bg-navy-900 py-24">
+        <section className="relative overflow-hidden navy-bg py-24">
           <div className="grid-lines absolute inset-0" />
           <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
             <div>
@@ -546,7 +556,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               {t.people.sustainability.map((s, i) => {
                 const Icon = sustainIcons[i];
                 return (
-                  <div key={s.title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+                  <div key={s.title} className="rounded-2xl glass-card card-lift p-6">
                     <Icon className="h-8 w-8 text-gold-400" />
                     <h3 className="mt-4 font-bold text-white">{s.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-white/65">{s.text}</p>
@@ -585,7 +595,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 </a>
                 <a
                   href={contact.phoneHref}
-                  className="inline-flex items-center gap-2 rounded-full bg-gold-400 px-7 py-3.5 font-semibold text-navy-950 transition-colors hover:bg-gold-300"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-300 to-gold-500 px-7 py-3.5 font-semibold text-navy-950 shadow-[0_10px_30px_-8px_rgba(226,185,86,0.7)] transition-transform hover:-translate-y-0.5"
                 >
                   <PhoneIcon className="h-5 w-5" />
                   {t.contactSection.callCta}
@@ -599,7 +609,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 { icon: GlobeIcon, label: t.contactSection.website, value: contact.website, href: `https://${contact.website}`, ltr: true },
                 { icon: PinIcon, label: t.contactSection.address, value: t.contactSection.addressValue },
               ].map(({ icon: Icon, label, value, href, ltr }) => (
-                <li key={label} className="rounded-2xl border border-steel-100 bg-steel-50 p-6">
+                <li key={label} className="rounded-2xl border border-steel-100 bg-white p-6 shadow-sm card-lift">
                   <Icon className="h-7 w-7 text-gold-500" />
                   <p className="mt-4 text-sm text-steel-400">{label}</p>
                   {href ? (

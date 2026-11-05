@@ -43,7 +43,7 @@ export default function ScrollTop({ label }: { label: string }) {
           cy="28"
           r={r}
           fill="none"
-          stroke="#070f20"
+          stroke="#0e1d3a"
           strokeWidth="3"
           strokeLinecap="round"
           strokeDasharray={c}

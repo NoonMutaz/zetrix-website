@@ -1,10 +1,24 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { dictionaries, isLocale, locales } from "@/lib/content";
+import "@fontsource/alexandria/500.css";
+import "@fontsource/alexandria/600.css";
+import "@fontsource/alexandria/700.css";
+import "@fontsource/alexandria/800.css";
+import "@fontsource/ibm-plex-sans-arabic/400.css";
+import "@fontsource/ibm-plex-sans-arabic/500.css";
+import "@fontsource/ibm-plex-sans-arabic/600.css";
+import "@fontsource/ibm-plex-sans-arabic/700.css";
+import "@fontsource/outfit/500.css";
+import "@fontsource/outfit/600.css";
+import "@fontsource/outfit/700.css";
+import "@fontsource/outfit/800.css";
+import "@fontsource/manrope/400.css";
+import "@fontsource/manrope/500.css";
+import "@fontsource/manrope/600.css";
+import "@fontsource/manrope/700.css";
 import "../globals.css";
 
-const fontsHref =
-  "https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap";
 
 export const dynamicParams = false;
 
@@ -52,16 +66,14 @@ export default async function LangLayout({
       style={
         {
           "--font-body": isAr
-            ? "'Cairo', system-ui, sans-serif"
-            : "'Montserrat', system-ui, sans-serif",
+            ? "'IBM Plex Sans Arabic', 'Manrope', system-ui, sans-serif"
+            : "'Manrope', system-ui, sans-serif",
+          "--font-display": isAr
+            ? "'Alexandria', 'Outfit', system-ui, sans-serif"
+            : "'Outfit', system-ui, sans-serif",
         } as React.CSSProperties
       }
     >
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link rel="stylesheet" href={fontsHref} />
-      </head>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

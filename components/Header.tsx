@@ -31,7 +31,7 @@ export default function Header({ t, lang }: { t: Dictionary["nav"]; lang: Locale
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled || open ? "bg-navy-950/95 shadow-lg backdrop-blur" : "bg-transparent"
+        scrolled || open ? "border-b border-gold-400/20 bg-navy-950/85 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.5)] backdrop-blur-md" : "border-b border-transparent bg-transparent"
       }`}
     >
       <nav className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">

@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-navy-950: #070f20;
-  --color-navy-900: #0c1a33;
-  --color-navy-800: #12264a;
-  --color-navy-700: #1b3664;
+  --color-navy-950: #0e1d3a;
+  --color-navy-900: #152a50;
+  --color-navy-800: #1d3765;
+  --color-navy-700: #284a82;
   --color-steel-50: #f4f6f9;
   --color-steel-100: #e7ebf1;
   --color-steel-400: #8a97ab;
@@ -13,6 +13,7 @@
   --color-gold-400: #e2b956;
   --color-gold-500: #c99a32;
   --font-sans: var(--font-body);
+  --font-display: var(--font-display);
 }
 
 html {
@@ -33,18 +34,34 @@ body {
 }
 
 .hero-overlay {
-  background: linear-gradient(90deg, rgba(7, 15, 32, 0.95) 0%, rgba(12, 26, 51, 0.82) 50%, rgba(12, 26, 51, 0.45) 100%);
+  background: linear-gradient(90deg, rgba(14, 29, 58, 0.93) 0%, rgba(21, 42, 80, 0.78) 50%, rgba(21, 42, 80, 0.4) 100%);
 }
 
 [dir="rtl"] .hero-overlay {
-  background: linear-gradient(270deg, rgba(7, 15, 32, 0.95) 0%, rgba(12, 26, 51, 0.82) 50%, rgba(12, 26, 51, 0.45) 100%);
+  background: linear-gradient(270deg, rgba(14, 29, 58, 0.93) 0%, rgba(21, 42, 80, 0.78) 50%, rgba(21, 42, 80, 0.4) 100%);
 }
 
+/* Gold grid squares that drift slowly and smoothly (GPU transform, not repaint) */
 .grid-lines {
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 35%, transparent 85%);
+  mask-image: radial-gradient(ellipse at center, #000 35%, transparent 85%);
+}
+.grid-lines::before {
+  content: "";
+  position: absolute;
+  inset: -48px;
   background-image:
-    linear-gradient(rgba(226, 185, 86, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(226, 185, 86, 0.07) 1px, transparent 1px);
+    linear-gradient(rgba(226, 185, 86, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(226, 185, 86, 0.09) 1px, transparent 1px);
   background-size: 48px 48px;
+  animation: grid-move 16s linear infinite;
+  will-change: transform;
+}
+@keyframes grid-move {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(48px, 48px, 0); }
 }
 
 /* ---------- Hero animated background ---------- */
@@ -70,12 +87,6 @@ body {
   to { transform: scale(1.14) translate3d(-2%, -1.5%, 0); }
 }
 
-.grid-drift {
-  animation: grid-drift 30s linear infinite;
-}
-@keyframes grid-drift {
-  to { background-position: 48px 48px, 48px 48px; }
-}
 
 .hero-glow {
   width: 46rem;
@@ -126,7 +137,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-slide, .hero-slide img, .grid-drift, .hero-glow, .spark, .arrow-bob, .sound-ring {
+  .hero-slide, .hero-slide img, .grid-lines::before, .reveal, .hero-glow, .spark, .arrow-bob, .sound-ring {
     animation: none !important;
   }
   .spark { display: none; }
@@ -146,4 +157,54 @@ main p.text-center,
 main .text-center li,
 main li.text-center {
   text-align: center;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 {
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+body {
+  font-feature-settings: "kern";
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- Section backgrounds ---------- */
+.dot-bg {
+  background-color: var(--color-steel-50);
+  background-image: radial-gradient(rgba(21, 42, 80, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.navy-bg {
+  background: radial-gradient(ellipse at top, #1f3a6b 0%, var(--color-navy-900) 55%, var(--color-navy-950) 100%);
+}
+
+/* ---------- Cards ---------- */
+.card-lift {
+  transition: transform 0.35s cubic-bezier(.2,.7,.2,1), box-shadow 0.35s, border-color 0.35s;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 45px -18px rgba(21, 42, 80, 0.35);
+  border-color: rgba(226, 185, 86, 0.55);
+}
+.glass-card {
+  background: linear-gradient(160deg, rgba(255,255,255,0.09), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+}
+
+/* ---------- Scroll reveal ---------- */
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(.2,.7,.2,1);
+}
+.js-reveal .reveal.is-visible {
+  opacity: 1;
+  transform: none;
 }
