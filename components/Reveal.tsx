@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 /**
@@ -7,6 +8,7 @@ import { useEffect } from "react";
  * Content stays fully visible if JavaScript is off or the user prefers reduced motion.
  */
 export default function Reveal() {
+  const pathname = usePathname();
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     if (!("IntersectionObserver" in window)) return;
@@ -35,7 +37,7 @@ export default function Reveal() {
     );
     targets.forEach((el) => io.observe(el));
     return () => io.disconnect();
-  }, []);
+  }, [pathname]);
 
   return null;
 }

@@ -18,6 +18,11 @@ import "@fontsource/manrope/500.css";
 import "@fontsource/manrope/600.css";
 import "@fontsource/manrope/700.css";
 import "../globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import SoundFX from "@/components/SoundFX";
+import ScrollTop from "@/components/ScrollTop";
+import Reveal from "@/components/Reveal";
 
 
 export const dynamicParams = false;
@@ -58,6 +63,7 @@ export default async function LangLayout({
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
   const isAr = lang === "ar";
+  const t = dictionaries[lang];
 
   return (
     <html
@@ -74,7 +80,14 @@ export default async function LangLayout({
         } as React.CSSProperties
       }
     >
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <Header t={t.nav} homeLabel={t.pages.home} lang={lang} />
+        <SoundFX labels={{ soundOn: t.nav.soundOn, soundOff: t.nav.soundOff }} />
+        <ScrollTop label={t.nav.toTop} />
+        <Reveal />
+        {children}
+        <Footer t={t} lang={lang} />
+      </body>
     </html>
   );
 }

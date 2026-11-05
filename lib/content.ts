@@ -400,8 +400,25 @@ const en = {
     emailCta: "Email Us",
     callCta: "Call Us",
   },
+  pages: {
+    home: "Home",
+    about: { title: "About ZETRIX", text: "Who we are, what we believe in, and the people behind every structure we deliver." },
+    facility: { title: "Our Facility", text: "A closer look at our headquarters and production site in Madinah." },
+    services: { title: "Our Services", text: "Integrated metal manufacturing under one roof, from design and cutting to coating and delivery." },
+    policies: { title: "Our Policies", text: "The quality, safety and environmental commitments that guide every stage of our work." },
+    projects: { title: "Our Works", text: "Selected projects and the partners we build with." },
+    contact: { title: "Contact Us", text: "Tell us about your project and our technical team will get back to you." },
+    viewAllServices: "View all services",
+    learnMore: "Learn more about us",
+    seeFacility: "Tour our facility",
+    ctaTitle: "Ready to start your project?",
+    ctaText: "Send us your drawings or requirements and receive a detailed quote.",
+  },
   footer: {
     rights: "All rights reserved.",
+    links: "Quick links",
+    contact: "Get in touch",
+    about: "Heavy and light steel structures, cable trays, prefabricated systems and precision aluminum works, manufactured in Madinah, Saudi Arabia.",
   },
 };
 
@@ -796,8 +813,25 @@ const ar: Dictionary = {
     emailCta: "راسلنا",
     callCta: "اتصل بنا",
   },
+  pages: {
+    home: "الرئيسية",
+    about: { title: "من نحن", text: "من نحن، وبماذا نؤمن، ومن هم الأشخاص خلف كل هيكل نسلّمه." },
+    facility: { title: "مقرّنا", text: "نظرة أقرب على مقرّنا وموقع الإنتاج في المدينة المنورة." },
+    services: { title: "خدماتنا", text: "تصنيع معدني متكامل تحت سقف واحد، من التصميم والقص حتى الدهان والتسليم." },
+    policies: { title: "سياساتنا", text: "التزاماتنا في الجودة والسلامة والبيئة التي توجّه كل مرحلة من عملنا." },
+    projects: { title: "أعمالنا", text: "مختارات من مشاريعنا، والشركاء الذين نبني معهم." },
+    contact: { title: "تواصل معنا", text: "أخبرنا عن مشروعك، وسيتواصل معك فريقنا الفني." },
+    viewAllServices: "عرض جميع الخدمات",
+    learnMore: "تعرّف علينا أكثر",
+    seeFacility: "جولة في مقرّنا",
+    ctaTitle: "جاهز لبدء مشروعك؟",
+    ctaText: "أرسل لنا مخططاتك أو متطلباتك واحصل على عرض سعر مفصّل.",
+  },
   footer: {
     rights: "جميع الحقوق محفوظة.",
+    links: "روابط سريعة",
+    contact: "تواصل معنا",
+    about: "هياكل معدنية ثقيلة وخفيفة، ومجاري كابلات، وأنظمة تصنيع مسبق، وأعمال ألمنيوم دقيقة، تُصنَّع في المدينة المنورة.",
   },
 };
 

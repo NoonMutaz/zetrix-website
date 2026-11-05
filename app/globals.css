@@ -208,3 +208,15 @@ body {
   opacity: 1;
   transform: none;
 }
+
+/* ---------- Inner page banner ---------- */
+.page-hero-img {
+  animation: ken-burns 22s ease-in-out infinite alternate;
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-hero-img { animation: none !important; }
+}
+/* short card text reads better aligned normally */
+main li p {
+  text-align: start;
+}
