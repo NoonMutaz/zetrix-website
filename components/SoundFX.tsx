@@ -242,6 +242,12 @@ export default function SoundFX({ labels }: { labels: { soundOn: string; soundOf
     document.addEventListener("pointerover", onOver);
     document.addEventListener("pointerout", onOut);
     document.addEventListener("visibilitychange", onVisibility);
+    // pause the ambient music while a video with its own sound is playing
+    const onMedia = (ev: Event) => {
+      if (!enabledRef.current || !engineRef.current) return;
+      fadeMusic(Boolean((ev as CustomEvent<boolean>).detail));
+    };
+    window.addEventListener("zetrix-music", onMedia);
 
     const w = window as unknown as { __zetrixAudio?: (on: boolean) => void };
     w.__zetrixAudio = (on: boolean) => {
@@ -260,6 +266,7 @@ export default function SoundFX({ labels }: { labels: { soundOn: string; soundOf
       document.removeEventListener("pointerover", onOver);
       document.removeEventListener("pointerout", onOut);
       document.removeEventListener("visibilitychange", onVisibility);
+      window.removeEventListener("zetrix-music", onMedia);
       engineRef.current?.timers.forEach((id) => clearInterval(id));
       engineRef.current?.ctx.close();
       engineRef.current = null;

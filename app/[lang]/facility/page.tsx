@@ -1,5 +1,5 @@
 import PageHero from "@/components/PageHero";
-import { FacilitySection, CtaSection } from "@/components/Sections";
+import { CtaSection, FacilitySection, TourSection } from "@/components/Sections";
 import { pageMetadata, resolve, type PageParams } from "@/lib/page";
 
 export const generateMetadata = pageMetadata("facility");
@@ -15,6 +15,7 @@ export default async function FacilityPage(props: PageParams) {
         homeHref={`/${lang}`}
         homeLabel={t.pages.home}
       />
+      <TourSection t={t} lang={lang} />
       <FacilitySection t={t} lang={lang} />
       <CtaSection t={t} lang={lang} />
     </main>

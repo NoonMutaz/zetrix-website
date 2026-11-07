@@ -57,6 +57,12 @@ const en = {
     eyebrow: "Our Facility",
     title: "A modern headquarters for metal industries",
     text: "A look at the ZETRIX Metal Industries site in Madinah: the administration building, the production halls, and the loading and delivery areas.",
+    tour: {
+      eyebrow: "Virtual Tour",
+      title: "Take a tour around our facility",
+      text: "A short cinematic walk around the ZETRIX site, from the general layout to the main facade, the entrance and an aerial view.",
+      play: "Play the tour",
+    },
     items: [
       { src: "/images/facility-front.jpg", caption: "Main facade" },
       { src: "/images/facility-entrance.jpg", caption: "Main entrance" },
@@ -491,6 +497,12 @@ const ar: Dictionary = {
     eyebrow: "مقرّنا",
     title: "مقرٌّ حديث للصناعات المعدنية",
     text: "نظرة على موقع زيتركس للصناعات المعدنية في المدينة المنورة: مبنى الإدارة، وصالات الإنتاج، ومناطق التحميل والتسليم.",
+    tour: {
+      eyebrow: "جولة افتراضية",
+      title: "تجوّل حول مقرّنا",
+      text: "جولة سينمائية قصيرة حول موقع زيتركس، من المخطط العام إلى الواجهة الرئيسية والمدخل، وصولاً إلى الإطلالة العلوية.",
+      play: "تشغيل الجولة",
+    },
     items: [
       { src: "/images/facility-front.jpg", caption: "الواجهة الرئيسية" },
       { src: "/images/facility-entrance.jpg", caption: "المدخل الرئيسي" },

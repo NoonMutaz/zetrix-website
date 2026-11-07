@@ -3,6 +3,7 @@ import Link from "next/link";
 import PolicyTabs from "@/components/PolicyTabs";
 import FacilityGallery from "@/components/FacilityGallery";
 import QuoteForm from "@/components/QuoteForm";
+import VideoTour from "@/components/VideoTour";
 import {
   ArrowIcon,
   BadgeIcon,
@@ -711,6 +712,21 @@ export function CtaSection({ t, lang }: P) {
               </Link>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function TourSection({ t }: P) {
+  return (
+    <section className="relative overflow-hidden navy-bg py-24">
+      <div className="grid-lines absolute inset-0" />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Heading eyebrow={t.facility.tour.eyebrow} title={t.facility.tour.title} dark center />
+        <p className="mx-auto mt-6 max-w-2xl text-center text-lg text-white/75">{t.facility.tour.text}</p>
+        <div className="mt-12">
+          <VideoTour src="/videos/zetrix-tour.mp4" poster="/videos/zetrix-tour-poster.jpg" label={t.facility.tour.play} />
         </div>
       </div>
     </section>
