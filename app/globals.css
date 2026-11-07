@@ -220,3 +220,16 @@ body {
 main li p {
   text-align: start;
 }
+
+/* ---------- WhatsApp button ---------- */
+.wa-ping {
+  animation: wa-ping 2.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+  opacity: 0;
+}
+@keyframes wa-ping {
+  0% { transform: scale(1); opacity: 0.45; }
+  70%, 100% { transform: scale(1.55); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wa-ping { animation: none !important; }
+}

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PolicyTabs from "@/components/PolicyTabs";
 import FacilityGallery from "@/components/FacilityGallery";
+import QuoteForm from "@/components/QuoteForm";
 import {
   ArrowIcon,
   BadgeIcon,
@@ -25,6 +26,7 @@ import {
   TargetIcon,
   TruckIcon,
   UsersIcon,
+  WhatsAppIcon,
   WrenchIcon,
 } from "@/components/Icons";
 import { contact, type Dictionary, type Locale } from "@/lib/content";
@@ -636,49 +638,48 @@ export function ClosingSection({ t }: P) {
 }
 
 export function ContactSection({ t }: P) {
+  const items = [
+    { icon: PhoneIcon, label: t.contactSection.phone, value: contact.phone, href: contact.phoneHref, ltr: true },
+    { icon: MailIcon, label: t.contactSection.email, value: contact.email, href: `mailto:${contact.email}`, ltr: true },
+    { icon: PinIcon, label: t.contactSection.address, value: t.contactSection.addressValue },
+    { icon: GlobeIcon, label: t.contactSection.website, value: contact.website, href: `https://${contact.website}`, ltr: true, wide: true },
+  ];
   return (
-    <section id="contact" className="bg-white py-24">
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+    <section id="contact" className="dot-bg py-24">
+      <div className="mx-auto grid max-w-7xl items-start gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.15fr] lg:px-8">
         <div>
           <Heading eyebrow={t.contactSection.eyebrow} title={t.contactSection.title} />
           <p className="mt-8 text-lg text-steel-600">{t.contactSection.text}</p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href={`mailto:${contact.email}`}
-              className="inline-flex items-center gap-2 rounded-full bg-navy-900 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-navy-700"
-            >
-              <MailIcon className="h-5 w-5" />
-              {t.contactSection.emailCta}
-            </a>
-            <a
-              href={contact.phoneHref}
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-300 to-gold-500 px-7 py-3.5 font-semibold text-navy-950 shadow-[0_10px_30px_-8px_rgba(226,185,86,0.7)] transition-transform hover:-translate-y-0.5"
-            >
-              <PhoneIcon className="h-5 w-5" />
-              {t.contactSection.callCta}
-            </a>
-          </div>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2">
+            {items.map(({ icon: Icon, label, value, href, ltr, wide }) => (
+              <li key={label} className={`flex items-start gap-4 rounded-2xl ${wide ? "sm:col-span-2" : ""} border border-steel-100 bg-white p-5 shadow-sm card-lift`}>
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-navy-900 text-gold-400">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <div className="min-w-0">
+                  <p className="text-sm text-steel-400">{label}</p>
+                  {href ? (
+                    <a href={href} dir={ltr ? "ltr" : undefined} className="mt-0.5 block break-words font-bold text-navy-900 hover:text-gold-500">
+                      {value}
+                    </a>
+                  ) : (
+                    <p className="mt-0.5 font-bold text-navy-900">{value}</p>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+          <a
+            href={`https://wa.me/${contact.whatsapp}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 font-semibold text-white transition-transform hover:-translate-y-0.5"
+          >
+            <WhatsAppIcon className="h-5 w-5" />
+            {t.contactSection.whatsapp}
+          </a>
         </div>
-        <ul className="grid gap-4 sm:grid-cols-2">
-          {[
-            { icon: PhoneIcon, label: t.contactSection.phone, value: contact.phone, href: contact.phoneHref, ltr: true },
-            { icon: MailIcon, label: t.contactSection.email, value: contact.email, href: `mailto:${contact.email}`, ltr: true },
-            { icon: GlobeIcon, label: t.contactSection.website, value: contact.website, href: `https://${contact.website}`, ltr: true },
-            { icon: PinIcon, label: t.contactSection.address, value: t.contactSection.addressValue },
-          ].map(({ icon: Icon, label, value, href, ltr }) => (
-            <li key={label} className="rounded-2xl border border-steel-100 bg-white p-6 shadow-sm card-lift">
-              <Icon className="h-7 w-7 text-gold-500" />
-              <p className="mt-4 text-sm text-steel-400">{label}</p>
-              {href ? (
-                <a href={href} dir={ltr ? "ltr" : undefined} className="mt-1 block break-words font-bold text-navy-900 hover:text-gold-500">
-                  {value}
-                </a>
-              ) : (
-                <p className="mt-1 font-bold text-navy-900">{value}</p>
-              )}
-            </li>
-          ))}
-        </ul>
+        <QuoteForm f={t.contactSection.form} services={t.services.items.map((x) => x.title)} />
       </div>
     </section>
   );

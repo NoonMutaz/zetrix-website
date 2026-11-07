@@ -23,6 +23,8 @@ import Footer from "@/components/Footer";
 import SoundFX from "@/components/SoundFX";
 import ScrollTop from "@/components/ScrollTop";
 import Reveal from "@/components/Reveal";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { Analytics } from "@vercel/analytics/next";
 
 
 export const dynamicParams = false;
@@ -87,6 +89,8 @@ export default async function LangLayout({
         <Reveal />
         {children}
         <Footer t={t} lang={lang} />
+        <WhatsAppButton label={t.contactSection.whatsapp} text={t.contactSection.form.waIntro} />
+        <Analytics />
       </body>
     </html>
   );
